@@ -1,11 +1,19 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask_sqlalchemy import SQLAlchemy
+#from models import User
+
 app = Flask(__name__)
+app.config.from_object('config')
+db = SQLAlchemy(app)
+
 
 @app.route('/')
-def hello_world():
-    return 'Hello, World!'
+@app.route('/index/<name>')
+def index(name='taozi'):
+    user = {'nickname': name}
+    return render_template('index.html', title='home', user=user)
 
 @app.route('/user/<username>')
 def show_user_profile(username):
@@ -27,7 +35,7 @@ def show_subpath(subpath):
 def hello(name=None):
     return render_template('hello.html', name=name)
 
-@app.route('/login', methods=['POST', 'GET'])
+''' @app.route('/login', methods=['POST', 'GET'])
 def login():
     error = None
     if request.method == 'POST':
@@ -38,4 +46,7 @@ def login():
             error = 'Invalid username/password'
     # the code below is executed if the request method
     # was GET or the credentials were invalid
-    return render_template('login.html', error=error)
+    return render_template('login.html', error=error) '''
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=12345, debug=True)
