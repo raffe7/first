@@ -5,8 +5,15 @@ from flask_sqlalchemy import SQLAlchemy
 #from models import User
 
 app = Flask(__name__)
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql:///root:mysql@127.0.0.1/flask_sql_demo'
+#app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config.from_object('config')
 db = SQLAlchemy(app)
+class User(db.Model):
+    __tablename__ = 'user'
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(64), index=True, unique=True)
+    email = db.Column(db.String(120), index=True, unique=True)
 
 
 @app.route('/')
@@ -49,4 +56,6 @@ def login():
     return render_template('login.html', error=error) '''
 
 if __name__ == '__main__':
+    db.drop_all()
+    db.create_all()
     app.run(host='0.0.0.0', port=12345, debug=True)
