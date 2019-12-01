@@ -12,7 +12,7 @@ flask-sqlalchemy = "*"
 flask-migrate = "*"
 sqlalchemy = "*"
 sqlalchemy-migrate = "*"
-flask-sqlalchemycd = "*"
+pymysql = "*"
 
 [requires]
 python_version = "3.7"
