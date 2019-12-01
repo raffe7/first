@@ -1,7 +1,9 @@
 from flask import Flask
 from flask import render_template
-from flask import request
-from flask_sqlalchemy import SQLAlchemy
+# from flask import request
+# from flask_sqlalchemy import SQLAlchemy
+from exts import db
+from models import User, Author, Book
 # import pymysql
 # from models import User
 
@@ -9,41 +11,15 @@ app = Flask(__name__)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql:///root:mysql@127.0.0.1/flask_sql_demo'
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config.from_object('config')
-db = SQLAlchemy(app)
+db.init_app(app)
+# db = SQLAlchemy(app)
 
-
-class User(db.Model):
-    __tablename__ = 'user'
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    username = db.Column(db.String(64), index=True, nullable=False, unique=True)
-    email = db.Column(db.String(120), index=True, nullable=False, unique=True)
-
-
-class Author(db.Model):
-    __tablename__ = 'authors'
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String(50), nullable=False, index=True, unique=True)
-    books = db.relationship('Book', backref='author')
-
-    def __repr__(self):
-        return 'Author: %s' % self.name
-
-
-class Book(db.Model):
-    __tablename__ = 'books'
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String(50), nullable=False, index=True, unique=True)
-    author_id = db.Column(db.Integer, db.ForeignKey('authors.id'))
-
-    def __repr__(self):
-        return 'Book: %s' % self.name
-
-
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 @app.route('/index/<name>')
 def index(name='taozi'):
     user = {'name': name, 'title': 'home'}
-    authors = Author.query.all()
+    # authors = Author.query.all()
+    authors = Author.query.filter_by(name='王松')
     return render_template('index.html', authors=authors, user=user)
 
 
