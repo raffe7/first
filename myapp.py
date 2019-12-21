@@ -11,15 +11,17 @@ app = Flask(__name__)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql:///root:mysql@127.0.0.1/flask_sql_demo'
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config.from_object('config')
+db.app = app
 db.init_app(app)
 # db = SQLAlchemy(app)
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index/<name>')
-def index(name='taozi'):
+@app.route('/index/<name>/<author>')
+def index(name='taozi', author='梁启超'):
     user = {'name': name, 'title': 'home'}
-    # authors = Author.query.all()
-    authors = Author.query.filter_by(name='王松')
+    #authors = Author.query.all()
+    authors = Author.query.filter_by(name=author)
     return render_template('index.html', authors=authors, user=user)
 
 
@@ -62,11 +64,11 @@ def login():
 
 
 if __name__ == '__main__':
-    # db.drop_all()
-    # db.create_all()
+    #db.drop_all()
+    #db.create_all()
 
     # 生成数据
-    ''' au1 = Author(name='杜志建')
+    """ au1 = Author(name='杜志建')
     au2 = Author(name='本杰明·富兰克林')
     au3 = Author(name='芭芭拉·明托')
     au4 = Author(name='梁启超')
@@ -79,6 +81,6 @@ if __name__ == '__main__':
     bk4 = Book(name='李鸿章传', author_id=au4.id)
     bk5 = Book(name='思考，快与慢', author_id=au5.id)
     db.session.add_all([bk1, bk2, bk3, bk4, bk5])
-    db.session.commit() '''
+    db.session.commit() """
 
-    app.run(host='0.0.0.0', port=12345, debug=True)
+    app.run(host='0.0.0.0', port=12345, debug=False)

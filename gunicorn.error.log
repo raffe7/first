@@ -1,0 +1,1309 @@
+[2019-12-21 16:35:19 +0800] [73512] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  bind: ['0.0.0.0:5000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /develope/python/first
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn.access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn.error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: appName.wsgi:myapp
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f3560657790>
+  on_reload: <function OnReload.on_reload at 0x7f35606578b0>
+  when_ready: <function WhenReady.when_ready at 0x7f35606579d0>
+  pre_fork: <function Prefork.pre_fork at 0x7f3560657af0>
+  post_fork: <function Postfork.post_fork at 0x7f3560657c10>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f3560657d30>
+  worker_int: <function WorkerInt.worker_int at 0x7f3560657e50>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f3560657f70>
+  pre_exec: <function PreExec.pre_exec at 0x7f355e8d20d0>
+  pre_request: <function PreRequest.pre_request at 0x7f355e8d21f0>
+  post_request: <function PostRequest.post_request at 0x7f355e8d2280>
+  child_exit: <function ChildExit.child_exit at 0x7f355e8d23a0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f355e8d24c0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f355e8d25e0>
+  on_exit: <function OnExit.on_exit at 0x7f355e8d2700>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2019-12-21 16:35:19 +0800] [73512] [INFO] Starting gunicorn 20.0.4
+[2019-12-21 16:35:19 +0800] [73512] [DEBUG] Arbiter booted
+[2019-12-21 16:35:19 +0800] [73512] [INFO] Listening at: http://0.0.0.0:5000 (73512)
+[2019-12-21 16:35:19 +0800] [73512] [INFO] Using worker: sync
+[2019-12-21 16:35:19 +0800] [73514] [INFO] Booting worker with pid: 73514
+[2019-12-21 16:35:19 +0800] [73514] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 961, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'appName'
+[2019-12-21 16:35:19 +0800] [73514] [INFO] Worker exiting (pid: 73514)
+[2019-12-21 16:35:19 +0800] [73512] [INFO] Shutting down: Master
+[2019-12-21 16:35:19 +0800] [73512] [INFO] Reason: Worker failed to boot.
+[2019-12-21 16:39:07 +0800] [73886] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  bind: ['0.0.0.0:5000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /develope/python/first
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn.access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn.error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:myapp
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f069ca5f790>
+  on_reload: <function OnReload.on_reload at 0x7f069ca5f8b0>
+  when_ready: <function WhenReady.when_ready at 0x7f069ca5f9d0>
+  pre_fork: <function Prefork.pre_fork at 0x7f069ca5faf0>
+  post_fork: <function Postfork.post_fork at 0x7f069ca5fc10>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f069ca5fd30>
+  worker_int: <function WorkerInt.worker_int at 0x7f069ca5fe50>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f069ca5ff70>
+  pre_exec: <function PreExec.pre_exec at 0x7f069acda0d0>
+  pre_request: <function PreRequest.pre_request at 0x7f069acda1f0>
+  post_request: <function PostRequest.post_request at 0x7f069acda280>
+  child_exit: <function ChildExit.child_exit at 0x7f069acda3a0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f069acda4c0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f069acda5e0>
+  on_exit: <function OnExit.on_exit at 0x7f069acda700>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2019-12-21 16:39:07 +0800] [73886] [INFO] Starting gunicorn 20.0.4
+[2019-12-21 16:39:07 +0800] [73886] [DEBUG] Arbiter booted
+[2019-12-21 16:39:07 +0800] [73886] [INFO] Listening at: http://0.0.0.0:5000 (73886)
+[2019-12-21 16:39:07 +0800] [73886] [INFO] Using worker: sync
+[2019-12-21 16:39:07 +0800] [73888] [INFO] Booting worker with pid: 73888
+[2019-12-21 16:39:07 +0800] [73888] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'wsgi'
+[2019-12-21 16:39:07 +0800] [73888] [INFO] Worker exiting (pid: 73888)
+[2019-12-21 16:39:07 +0800] [73886] [INFO] Shutting down: Master
+[2019-12-21 16:39:07 +0800] [73886] [INFO] Reason: Worker failed to boot.
+[2019-12-21 16:44:55 +0800] [74436] [DEBUG] Current configuration:
+  config: None
+  bind: ['0.0.0.0:5000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /develope/python/first
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn.access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn.error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: run:myapp
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f86f8ce8790>
+  on_reload: <function OnReload.on_reload at 0x7f86f8ce88b0>
+  when_ready: <function WhenReady.when_ready at 0x7f86f8ce89d0>
+  pre_fork: <function Prefork.pre_fork at 0x7f86f8ce8af0>
+  post_fork: <function Postfork.post_fork at 0x7f86f8ce8c10>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f86f8ce8d30>
+  worker_int: <function WorkerInt.worker_int at 0x7f86f8ce8e50>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f86f8ce8f70>
+  pre_exec: <function PreExec.pre_exec at 0x7f86f6f630d0>
+  pre_request: <function PreRequest.pre_request at 0x7f86f6f631f0>
+  post_request: <function PostRequest.post_request at 0x7f86f6f63280>
+  child_exit: <function ChildExit.child_exit at 0x7f86f6f633a0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f86f6f634c0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f86f6f635e0>
+  on_exit: <function OnExit.on_exit at 0x7f86f6f63700>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2019-12-21 16:44:55 +0800] [74436] [INFO] Starting gunicorn 20.0.4
+[2019-12-21 16:44:55 +0800] [74436] [DEBUG] Arbiter booted
+[2019-12-21 16:44:55 +0800] [74436] [INFO] Listening at: http://0.0.0.0:5000 (74436)
+[2019-12-21 16:44:55 +0800] [74436] [INFO] Using worker: sync
+[2019-12-21 16:44:55 +0800] [74438] [INFO] Booting worker with pid: 74438
+[2019-12-21 16:44:55 +0800] [74438] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'run'
+[2019-12-21 16:44:55 +0800] [74438] [INFO] Worker exiting (pid: 74438)
+[2019-12-21 16:44:55 +0800] [74436] [INFO] Shutting down: Master
+[2019-12-21 16:44:55 +0800] [74436] [INFO] Reason: Worker failed to boot.
+[2019-12-21 16:45:15 +0800] [74474] [DEBUG] Current configuration:
+  config: None
+  bind: ['0.0.0.0:5000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /develope/python/first
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn.access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn.error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: run:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fe1af53d790>
+  on_reload: <function OnReload.on_reload at 0x7fe1af53d8b0>
+  when_ready: <function WhenReady.when_ready at 0x7fe1af53d9d0>
+  pre_fork: <function Prefork.pre_fork at 0x7fe1af53daf0>
+  post_fork: <function Postfork.post_fork at 0x7fe1af53dc10>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fe1af53dd30>
+  worker_int: <function WorkerInt.worker_int at 0x7fe1af53de50>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fe1af53df70>
+  pre_exec: <function PreExec.pre_exec at 0x7fe1ad7b80d0>
+  pre_request: <function PreRequest.pre_request at 0x7fe1ad7b81f0>
+  post_request: <function PostRequest.post_request at 0x7fe1ad7b8280>
+  child_exit: <function ChildExit.child_exit at 0x7fe1ad7b83a0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fe1ad7b84c0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fe1ad7b85e0>
+  on_exit: <function OnExit.on_exit at 0x7fe1ad7b8700>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2019-12-21 16:45:15 +0800] [74474] [INFO] Starting gunicorn 20.0.4
+[2019-12-21 16:45:15 +0800] [74474] [DEBUG] Arbiter booted
+[2019-12-21 16:45:15 +0800] [74474] [INFO] Listening at: http://0.0.0.0:5000 (74474)
+[2019-12-21 16:45:15 +0800] [74474] [INFO] Using worker: sync
+[2019-12-21 16:45:15 +0800] [74476] [INFO] Booting worker with pid: 74476
+[2019-12-21 16:45:15 +0800] [74476] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'run'
+[2019-12-21 16:45:15 +0800] [74476] [INFO] Worker exiting (pid: 74476)
+[2019-12-21 16:45:15 +0800] [74474] [INFO] Shutting down: Master
+[2019-12-21 16:45:15 +0800] [74474] [INFO] Reason: Worker failed to boot.
+[2019-12-21 16:46:03 +0800] [74576] [DEBUG] Current configuration:
+  config: None
+  bind: ['0.0.0.0:5000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /develope/python/first
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn.access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn.error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: myapp:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fd9450d5790>
+  on_reload: <function OnReload.on_reload at 0x7fd9450d58b0>
+  when_ready: <function WhenReady.when_ready at 0x7fd9450d59d0>
+  pre_fork: <function Prefork.pre_fork at 0x7fd9450d5af0>
+  post_fork: <function Postfork.post_fork at 0x7fd9450d5c10>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fd9450d5d30>
+  worker_int: <function WorkerInt.worker_int at 0x7fd9450d5e50>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fd9450d5f70>
+  pre_exec: <function PreExec.pre_exec at 0x7fd9433500d0>
+  pre_request: <function PreRequest.pre_request at 0x7fd9433501f0>
+  post_request: <function PostRequest.post_request at 0x7fd943350280>
+  child_exit: <function ChildExit.child_exit at 0x7fd9433503a0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fd9433504c0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fd9433505e0>
+  on_exit: <function OnExit.on_exit at 0x7fd943350700>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2019-12-21 16:46:03 +0800] [74576] [INFO] Starting gunicorn 20.0.4
+[2019-12-21 16:46:03 +0800] [74576] [DEBUG] Arbiter booted
+[2019-12-21 16:46:03 +0800] [74576] [INFO] Listening at: http://0.0.0.0:5000 (74576)
+[2019-12-21 16:46:03 +0800] [74576] [INFO] Using worker: sync
+[2019-12-21 16:46:03 +0800] [74578] [INFO] Booting worker with pid: 74578
+[2019-12-21 16:46:03 +0800] [74579] [INFO] Booting worker with pid: 74579
+[2019-12-21 16:46:03 +0800] [74576] [DEBUG] 2 workers
+[2019-12-21 16:46:36 +0800] [74579] [DEBUG] GET /
+[2019-12-21 16:46:39,052] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/connections.py", line 581, in connect
+    sock = socket.create_connection(
+  File "/usr/local/python3/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/local/python3/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2276, in _wrap_pool_connect
+    return fn()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 363, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 760, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 492, in checkout
+    rec = pool._do_get()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 139, in _do_get
+    self._dec_overflow()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
+    raise value
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 136, in _do_get
+    return self._create_connection()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 308, in _create_connection
+    return _ConnectionRecord(self)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 437, in __init__
+    self.__connect(first_connect_check=True)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 639, in __connect
+    connection = pool._invoke_creator(self)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 482, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/connections.py", line 630, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '192.168.1.8' ([Errno 111] Connection refused)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/develope/python/first/myapp.py", line 23, in index
+    return render_template('index.html', authors=authors, user=user)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/develope/python/first/templates/index.html", line 10, in <module>
+    {% for author in authors %}
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3367, in __iter__
+    return self._execute_and_instances(context)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3388, in _execute_and_instances
+    conn = self._get_bind_args(
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3403, in _get_bind_args
+    return fn(
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3382, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1130, in connection
+    return self._connection_for_bind(
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1138, in _connection_for_bind
+    return self.transaction._connection_for_bind(
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 432, in _connection_for_bind
+    conn = bind._contextual_connect()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2242, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2279, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1547, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2276, in _wrap_pool_connect
+    return fn()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 363, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 760, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 492, in checkout
+    rec = pool._do_get()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 139, in _do_get
+    self._dec_overflow()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
+    raise value
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 136, in _do_get
+    return self._create_connection()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 308, in _create_connection
+    return _ConnectionRecord(self)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 437, in __init__
+    self.__connect(first_connect_check=True)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 639, in __connect
+    connection = pool._invoke_creator(self)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 482, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/connections.py", line 630, in connect
+    raise exc
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on '192.168.1.8' ([Errno 111] Connection refused)")
+(Background on this error at: http://sqlalche.me/e/e3q8)
+[2019-12-21 16:46:48 +0800] [74578] [DEBUG] Closing connection. 
+[2019-12-21 16:46:48 +0800] [74578] [DEBUG] GET /favicon.ico
+[2019-12-21 17:05:11 +0800] [74576] [INFO] Handling signal: int
+[2019-12-21 17:05:11 +0800] [74578] [INFO] Worker exiting (pid: 74578)
+[2019-12-21 17:05:11 +0800] [74579] [INFO] Worker exiting (pid: 74579)
+[2019-12-21 17:05:12 +0800] [74576] [INFO] Shutting down: Master
+[2019-12-21 17:05:14 +0800] [76595] [DEBUG] Current configuration:
+  config: None
+  bind: ['0.0.0.0:5000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /develope/python/first
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn.access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn.error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: myapp:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f741d056790>
+  on_reload: <function OnReload.on_reload at 0x7f741d0568b0>
+  when_ready: <function WhenReady.when_ready at 0x7f741d0569d0>
+  pre_fork: <function Prefork.pre_fork at 0x7f741d056af0>
+  post_fork: <function Postfork.post_fork at 0x7f741d056c10>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f741d056d30>
+  worker_int: <function WorkerInt.worker_int at 0x7f741d056e50>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f741d056f70>
+  pre_exec: <function PreExec.pre_exec at 0x7f741b2d10d0>
+  pre_request: <function PreRequest.pre_request at 0x7f741b2d11f0>
+  post_request: <function PostRequest.post_request at 0x7f741b2d1280>
+  child_exit: <function ChildExit.child_exit at 0x7f741b2d13a0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f741b2d14c0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f741b2d15e0>
+  on_exit: <function OnExit.on_exit at 0x7f741b2d1700>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2019-12-21 17:05:14 +0800] [76595] [INFO] Starting gunicorn 20.0.4
+[2019-12-21 17:05:14 +0800] [76595] [DEBUG] Arbiter booted
+[2019-12-21 17:05:14 +0800] [76595] [INFO] Listening at: http://0.0.0.0:5000 (76595)
+[2019-12-21 17:05:14 +0800] [76595] [INFO] Using worker: sync
+[2019-12-21 17:05:14 +0800] [76597] [INFO] Booting worker with pid: 76597
+[2019-12-21 17:05:14 +0800] [76598] [INFO] Booting worker with pid: 76598
+[2019-12-21 17:05:14 +0800] [76595] [DEBUG] 2 workers
+[2019-12-21 17:05:37 +0800] [76597] [DEBUG] GET /
+[2019-12-21 17:06:07 +0800] [76595] [CRITICAL] WORKER TIMEOUT (pid:76598)
+[2019-12-21 17:06:07 +0800] [76598] [INFO] Worker exiting (pid: 76598)
+[2019-12-21 17:06:08 +0800] [76735] [INFO] Booting worker with pid: 76735
+[2019-12-21 17:06:29 +0800] [76597] [DEBUG] GET /index/
+[2019-12-21 17:07:00 +0800] [76595] [CRITICAL] WORKER TIMEOUT (pid:76735)
+[2019-12-21 17:07:00 +0800] [76735] [INFO] Worker exiting (pid: 76735)
+[2019-12-21 17:07:00 +0800] [76821] [INFO] Booting worker with pid: 76821
+[2019-12-21 17:07:21 +0800] [76597] [DEBUG] GET /index/
+[2019-12-21 17:07:24 +0800] [76821] [DEBUG] GET /index
+[2019-12-21 17:07:55 +0800] [76595] [CRITICAL] WORKER TIMEOUT (pid:76597)
+[2019-12-21 17:07:55 +0800] [76597] [INFO] Worker exiting (pid: 76597)
+[2019-12-21 17:07:55 +0800] [76923] [INFO] Booting worker with pid: 76923
+[2019-12-21 17:09:49 +0800] [76821] [DEBUG] GET /index
+[2019-12-21 17:09:59 +0800] [76923] [DEBUG] GET /index/
+[2019-12-21 17:10:29 +0800] [76595] [CRITICAL] WORKER TIMEOUT (pid:76821)
+[2019-12-21 17:10:29 +0800] [76821] [INFO] Worker exiting (pid: 76821)
+[2019-12-21 17:10:29 +0800] [77291] [INFO] Booting worker with pid: 77291
+[2019-12-21 17:10:48 +0800] [76923] [DEBUG] GET /index/haha
+[2019-12-21 17:11:18 +0800] [76595] [CRITICAL] WORKER TIMEOUT (pid:77291)
+[2019-12-21 17:11:18 +0800] [77291] [INFO] Worker exiting (pid: 77291)
+[2019-12-21 17:11:18 +0800] [77392] [INFO] Booting worker with pid: 77392
+[2019-12-21 17:12:12 +0800] [76595] [INFO] Handling signal: int
+[2019-12-21 17:12:12 +0800] [77392] [INFO] Worker exiting (pid: 77392)
+[2019-12-21 17:12:12 +0800] [76595] [INFO] Shutting down: Master
+[2019-12-21 17:12:14 +0800] [77492] [DEBUG] Current configuration:
+  config: None
+  bind: ['0.0.0.0:5000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /develope/python/first
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn.access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn.error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: myapp:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fcd4539b790>
+  on_reload: <function OnReload.on_reload at 0x7fcd4539b8b0>
+  when_ready: <function WhenReady.when_ready at 0x7fcd4539b9d0>
+  pre_fork: <function Prefork.pre_fork at 0x7fcd4539baf0>
+  post_fork: <function Postfork.post_fork at 0x7fcd4539bc10>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fcd4539bd30>
+  worker_int: <function WorkerInt.worker_int at 0x7fcd4539be50>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fcd4539bf70>
+  pre_exec: <function PreExec.pre_exec at 0x7fcd436160d0>
+  pre_request: <function PreRequest.pre_request at 0x7fcd436161f0>
+  post_request: <function PostRequest.post_request at 0x7fcd43616280>
+  child_exit: <function ChildExit.child_exit at 0x7fcd436163a0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fcd436164c0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fcd436165e0>
+  on_exit: <function OnExit.on_exit at 0x7fcd43616700>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2019-12-21 17:12:14 +0800] [77492] [INFO] Starting gunicorn 20.0.4
+[2019-12-21 17:12:14 +0800] [77492] [DEBUG] Arbiter booted
+[2019-12-21 17:12:14 +0800] [77492] [INFO] Listening at: http://0.0.0.0:5000 (77492)
+[2019-12-21 17:12:14 +0800] [77492] [INFO] Using worker: sync
+[2019-12-21 17:12:14 +0800] [77494] [INFO] Booting worker with pid: 77494
+[2019-12-21 17:12:14 +0800] [77495] [INFO] Booting worker with pid: 77495
+[2019-12-21 17:12:14 +0800] [77492] [DEBUG] 2 workers
+[2019-12-21 17:12:33 +0800] [77495] [DEBUG] GET /index/haha
+[2019-12-21 17:13:03 +0800] [77492] [CRITICAL] WORKER TIMEOUT (pid:77494)
+[2019-12-21 17:13:03 +0800] [77494] [INFO] Worker exiting (pid: 77494)
+[2019-12-21 17:13:03 +0800] [77595] [INFO] Booting worker with pid: 77595
+[2019-12-21 17:13:19 +0800] [77595] [DEBUG] GET /index/haha
+[2019-12-21 17:13:50 +0800] [77492] [CRITICAL] WORKER TIMEOUT (pid:77495)
+[2019-12-21 17:13:50 +0800] [77495] [INFO] Worker exiting (pid: 77495)
+[2019-12-21 17:13:50 +0800] [77692] [INFO] Booting worker with pid: 77692
+[2019-12-21 17:13:55 +0800] [77595] [DEBUG] GET /index/haha
+[2019-12-21 17:14:16 +0800] [77692] [DEBUG] Closing connection. 
+[2019-12-21 17:14:16 +0800] [77595] [DEBUG] GET /index/haha
+[2019-12-21 17:14:46 +0800] [77492] [CRITICAL] WORKER TIMEOUT (pid:77692)
+[2019-12-21 17:14:46 +0800] [77692] [INFO] Worker exiting (pid: 77692)
+[2019-12-21 17:14:47 +0800] [77813] [INFO] Booting worker with pid: 77813
+[2019-12-21 17:14:53 +0800] [77492] [INFO] Handling signal: int
+[2019-12-21 17:14:53 +0800] [77595] [INFO] Worker exiting (pid: 77595)
+[2019-12-21 17:14:53 +0800] [77813] [INFO] Worker exiting (pid: 77813)
+[2019-12-21 17:14:53 +0800] [77492] [INFO] Shutting down: Master
+[2019-12-21 17:14:55 +0800] [77841] [DEBUG] Current configuration:
+  config: None
+  bind: ['0.0.0.0:5000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /develope/python/first
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn.access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn.error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: myapp:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f36858ad790>
+  on_reload: <function OnReload.on_reload at 0x7f36858ad8b0>
+  when_ready: <function WhenReady.when_ready at 0x7f36858ad9d0>
+  pre_fork: <function Prefork.pre_fork at 0x7f36858adaf0>
+  post_fork: <function Postfork.post_fork at 0x7f36858adc10>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f36858add30>
+  worker_int: <function WorkerInt.worker_int at 0x7f36858ade50>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f36858adf70>
+  pre_exec: <function PreExec.pre_exec at 0x7f3683b280d0>
+  pre_request: <function PreRequest.pre_request at 0x7f3683b281f0>
+  post_request: <function PostRequest.post_request at 0x7f3683b28280>
+  child_exit: <function ChildExit.child_exit at 0x7f3683b283a0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f3683b284c0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f3683b285e0>
+  on_exit: <function OnExit.on_exit at 0x7f3683b28700>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2019-12-21 17:14:55 +0800] [77841] [INFO] Starting gunicorn 20.0.4
+[2019-12-21 17:14:55 +0800] [77841] [DEBUG] Arbiter booted
+[2019-12-21 17:14:55 +0800] [77841] [INFO] Listening at: http://0.0.0.0:5000 (77841)
+[2019-12-21 17:14:55 +0800] [77841] [INFO] Using worker: sync
+[2019-12-21 17:14:55 +0800] [77843] [INFO] Booting worker with pid: 77843
+[2019-12-21 17:14:55 +0800] [77844] [INFO] Booting worker with pid: 77844
+[2019-12-21 17:14:55 +0800] [77841] [DEBUG] 2 workers
+[2019-12-21 17:15:05 +0800] [77844] [DEBUG] GET /index/haha
+[2019-12-21 17:15:36 +0800] [77841] [CRITICAL] WORKER TIMEOUT (pid:77843)
+[2019-12-21 17:15:36 +0800] [77843] [INFO] Worker exiting (pid: 77843)
+[2019-12-21 17:15:36 +0800] [77947] [INFO] Booting worker with pid: 77947
+[2019-12-21 18:00:35 +0800] [77841] [INFO] Handling signal: int
+[2019-12-21 18:00:35 +0800] [77844] [INFO] Worker exiting (pid: 77844)
+[2019-12-21 18:00:35 +0800] [77947] [INFO] Worker exiting (pid: 77947)
+[2019-12-21 18:00:35 +0800] [77841] [INFO] Shutting down: Master
+[2019-12-21 18:00:38 +0800] [82370] [DEBUG] Current configuration:
+  config: None
+  bind: ['0.0.0.0:5000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /develope/python/first
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn.access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn.error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: myapp:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f53e8314790>
+  on_reload: <function OnReload.on_reload at 0x7f53e83148b0>
+  when_ready: <function WhenReady.when_ready at 0x7f53e83149d0>
+  pre_fork: <function Prefork.pre_fork at 0x7f53e8314af0>
+  post_fork: <function Postfork.post_fork at 0x7f53e8314c10>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f53e8314d30>
+  worker_int: <function WorkerInt.worker_int at 0x7f53e8314e50>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f53e8314f70>
+  pre_exec: <function PreExec.pre_exec at 0x7f53e658f0d0>
+  pre_request: <function PreRequest.pre_request at 0x7f53e658f1f0>
+  post_request: <function PostRequest.post_request at 0x7f53e658f280>
+  child_exit: <function ChildExit.child_exit at 0x7f53e658f3a0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f53e658f4c0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f53e658f5e0>
+  on_exit: <function OnExit.on_exit at 0x7f53e658f700>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2019-12-21 18:00:38 +0800] [82370] [INFO] Starting gunicorn 20.0.4
+[2019-12-21 18:00:38 +0800] [82370] [DEBUG] Arbiter booted
+[2019-12-21 18:00:38 +0800] [82370] [INFO] Listening at: http://0.0.0.0:5000 (82370)
+[2019-12-21 18:00:38 +0800] [82370] [INFO] Using worker: sync
+[2019-12-21 18:00:38 +0800] [82372] [INFO] Booting worker with pid: 82372
+[2019-12-21 18:00:38 +0800] [82374] [INFO] Booting worker with pid: 82374
+[2019-12-21 18:00:38 +0800] [82370] [DEBUG] 2 workers
+[2019-12-21 18:01:22 +0800] [82374] [DEBUG] GET /index/haha
+[2019-12-21 18:01:32,512] ERROR in app: Exception on /index/haha [GET]
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1245, in _execute_context
+    self.dialect.do_execute(
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'test.authors' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/develope/python/first/myapp.py", line 23, in index
+    return render_template('index.html', authors=authors, user=user)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/develope/python/first/templates/index.html", line 10, in <module>
+    {% for author in authors %}
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3367, in __iter__
+    return self._execute_and_instances(context)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 3392, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1095, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1249, in _execute_context
+    self._handle_dbapi_exception(
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1245, in _execute_context
+    self.dialect.do_execute(
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/root/.local/share/virtualenvs/first-we8fLymr/lib/python3.8/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'test.authors' doesn't exist")
+[SQL: SELECT authors.id AS authors_id, authors.name AS authors_name 
+FROM authors 
+WHERE authors.name = %(name_1)s]
+[parameters: {'name_1': '王松'}]
+(Background on this error at: http://sqlalche.me/e/f405)
+[2019-12-21 18:01:32 +0800] [82372] [DEBUG] Closing connection. 
+[2019-12-21 18:06:02 +0800] [82370] [INFO] Handling signal: int
+[2019-12-21 18:06:02 +0800] [82372] [INFO] Worker exiting (pid: 82372)
+[2019-12-21 18:06:02 +0800] [82374] [INFO] Worker exiting (pid: 82374)
+[2019-12-21 18:06:02 +0800] [82370] [INFO] Shutting down: Master
+[2019-12-21 18:06:04 +0800] [83061] [DEBUG] Current configuration:
+  config: None
+  bind: ['0.0.0.0:5000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /develope/python/first
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: gunicorn.access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn.error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: myapp:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f8ddbf77790>
+  on_reload: <function OnReload.on_reload at 0x7f8ddbf778b0>
+  when_ready: <function WhenReady.when_ready at 0x7f8ddbf779d0>
+  pre_fork: <function Prefork.pre_fork at 0x7f8ddbf77af0>
+  post_fork: <function Postfork.post_fork at 0x7f8ddbf77c10>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f8ddbf77d30>
+  worker_int: <function WorkerInt.worker_int at 0x7f8ddbf77e50>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f8ddbf77f70>
+  pre_exec: <function PreExec.pre_exec at 0x7f8dda1f20d0>
+  pre_request: <function PreRequest.pre_request at 0x7f8dda1f21f0>
+  post_request: <function PostRequest.post_request at 0x7f8dda1f2280>
+  child_exit: <function ChildExit.child_exit at 0x7f8dda1f23a0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f8dda1f24c0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f8dda1f25e0>
+  on_exit: <function OnExit.on_exit at 0x7f8dda1f2700>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2019-12-21 18:06:04 +0800] [83061] [INFO] Starting gunicorn 20.0.4
+[2019-12-21 18:06:04 +0800] [83061] [DEBUG] Arbiter booted
+[2019-12-21 18:06:04 +0800] [83061] [INFO] Listening at: http://0.0.0.0:5000 (83061)
+[2019-12-21 18:06:04 +0800] [83061] [INFO] Using worker: sync
+[2019-12-21 18:06:04 +0800] [83063] [INFO] Booting worker with pid: 83063
+[2019-12-21 18:06:04 +0800] [83064] [INFO] Booting worker with pid: 83064
+[2019-12-21 18:06:04 +0800] [83061] [DEBUG] 2 workers
+[2019-12-21 18:08:17 +0800] [83061] [INFO] Handling signal: int
+[2019-12-21 18:08:17 +0800] [83063] [INFO] Worker exiting (pid: 83063)
+[2019-12-21 18:08:17 +0800] [83064] [INFO] Worker exiting (pid: 83064)
+[2019-12-21 18:08:17 +0800] [83061] [INFO] Shutting down: Master

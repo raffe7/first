@@ -13,6 +13,7 @@ flask-migrate = "*"
 sqlalchemy = "*"
 sqlalchemy-migrate = "*"
 pymysql = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
